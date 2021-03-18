@@ -1,5 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+let initialTodos = [
+  { name: 'learn redux', completed: false },
+  { name: 'eat pizza', completed: false },
+  { name: 'nail exams', completed: false }
+];
+
+if (localStorage.getItem('todos')) {
+  initialTodos = JSON.parse(localStorage.getItem('todos'));
+  console.log(initialTodos);
+}
+
 export const todosSlice = createSlice({
   name: 'todos',
   initialState: {

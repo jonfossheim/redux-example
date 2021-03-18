@@ -4,6 +4,7 @@
   justify-content: space-between;
   width: 500px;
   border: 2px solid black;
+  padding: 1.3rem;
 }
 
 .addField {
@@ -27,7 +28,7 @@
 .buttonGroup {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-grow: 1;
   flex-basis: 0;

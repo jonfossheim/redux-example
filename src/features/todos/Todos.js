@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addTodo, completeTodo, deleteTodo, selectTodos } from './todosSlice';
+import Todo from './Todo';
+import { saveToLocalStorage } from '../../utils/saveToLocalStorage';
 import styles from './Todos.module.css';
 
 export function Todos() {
@@ -14,6 +16,9 @@ export function Todos() {
     }
     return;
   };
+
+  const dispComplete = index => dispatch(completeTodo({ index }));
+  const dispDelete = index => dispatch(deleteTodo({ index }));
 
   return (
     <div className={styles.wrapper}>
@@ -31,22 +36,15 @@ export function Todos() {
         <button onClick={handleSubmit}>Add</button>
       </form>
       {todos.map((todo, index) => (
-        <div key={index} className={styles.todoItem}>
-          <div className={styles.contentGroup}>
-            <h3>{todo.name}</h3>
-            <p>{todo.completed ? 'completed' : 'not completed'}</p>
-          </div>
-
-          <div className={styles.buttonGroup}>
-            <button onClick={() => dispatch(completeTodo({ index }))}>
-              complete
-            </button>
-            <button onClick={() => dispatch(deleteTodo({ index }))}>
-              delete
-            </button>
-          </div>
-        </div>
+        <Todo
+          key={index}
+          index={index}
+          todo={todo}
+          dispComplete={dispComplete}
+          dispDelete={dispDelete}
+        />
       ))}
+      <button onClick={() => saveToLocalStorage(todos)}>Save todos</button>
     </div>
   );
 }

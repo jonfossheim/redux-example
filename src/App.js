@@ -10,6 +10,8 @@ function App() {
   const todos = useSelector(selectTodos);
   const count = useSelector(selectCount);
 
+  console.log(todos);
+
   return (
     <div className='App'>
       <Todos />
