@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500px;
+  border: 2px solid black;
+}
+
+.addField {
+  min-height: 26px;
+  margin: 12px;
+}
+
+.todoItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.contentGroup {
+  flex-grow: 1;
+  flex-basis: 0;
+  border: 3px solid blue;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  border: 3px solid red;
+}
