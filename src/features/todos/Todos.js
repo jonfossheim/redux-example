@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
+
 import { addTodo, completeTodo, deleteTodo, selectTodos } from './todosSlice';
+
 import styles from './Todos.module.css';
 
 export function Todos() {
@@ -30,6 +33,7 @@ export function Todos() {
         />
         <button onClick={handleSubmit}>Add</button>
       </form>
+
       {todos.map((todo, index) => (
         <div key={index} className={styles.todoItem}>
           <div className={styles.contentGroup}>
@@ -41,6 +45,7 @@ export function Todos() {
             <button onClick={() => dispatch(completeTodo({ index }))}>
               complete
             </button>
+
             <button onClick={() => dispatch(deleteTodo({ index }))}>
               delete
             </button>

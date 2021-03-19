@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux';
 import { selectTodos } from './features/todos/todosSlice';
 import { selectCount } from './features/counter/counterSlice';
 import { Counter } from './features/counter/Counter';
+
 import { Todos } from './features/todos/Todos';
+
 import './App.css';
 
 function App() {
@@ -16,8 +18,8 @@ function App() {
       <Counter />
       <div>
         <h2>Outside Todos and Counter</h2>
-        <h3>Counter State:{todos.length} </h3>
-        <h3>Todos Length: {count} </h3>
+        <h3>Counter State:{count} </h3>
+        <h3>Todos Length: {todos.length} </h3>
       </div>
     </div>
   );

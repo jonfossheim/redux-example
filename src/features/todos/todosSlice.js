@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const todosSlice = createSlice({
   name: 'todos',
+
   initialState: {
     value: [
       { name: 'learn redux', completed: false },
@@ -9,14 +10,17 @@ export const todosSlice = createSlice({
       { name: 'nail exams', completed: false }
     ]
   },
+
   reducers: {
     addTodo: (state, action) => {
       state.value.push({ name: action.payload.name, completed: false });
     },
+
     completeTodo: (state, action) => {
       let item = state.value[action.payload.index];
       item.completed = !item.completed;
     },
+
     deleteTodo: (state, action) => {
       state.value.splice(action.payload.index, 1);
     }
