@@ -14,11 +14,7 @@ if (localStorage.getItem('todos')) {
 export const todosSlice = createSlice({
   name: 'todos',
   initialState: {
-    value: [
-      { name: 'learn redux', completed: false },
-      { name: 'eat pizza', completed: false },
-      { name: 'nail exams', completed: false }
-    ]
+    value: initialTodos
   },
   reducers: {
     addTodo: (state, action) => {

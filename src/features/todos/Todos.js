@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addTodo, completeTodo, deleteTodo, selectTodos } from './todosSlice';
 import Todo from './Todo';
+
 import { saveToLocalStorage } from '../../utils/saveToLocalStorage';
+
 import styles from './Todos.module.css';
 
 export function Todos() {
